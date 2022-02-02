@@ -28,16 +28,15 @@ hr {
 }
 
 .header-menu {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .header-list{
     display: flex;
     flex-wrap: wrap;
-    width: 35%;
+    width: 350px;
     justify-content: space-between;
 }
-
 .header-link{
     font-family: Montserrat;
     font-size: 14px;
@@ -47,4 +46,35 @@ hr {
 }
 .header-link:hover, .header__link:focus, .header__link:hover.active{
     opacity: .65;
+}
+
+.intro {
+    display: flex;
+    width: 80%;
+    margin: 60px auto;
+}
+.intro-photo {
+    margin: 0 auto;
+    width: 50%;
+    box-shadow: 0px 0px 60px 10px #9ebeff;
+}
+.intro-text {
+    display: inline;
+    width: 50%;
+    background: rgb(255, 255, 255);
+    padding: 0 50px
+
+    /* text-align: center; */
+}
+.intro-main-text {
+    margin: 100px 0 40px;
+    font-family: Montserrat;
+    color: rgb(17, 37, 100);
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 40px
+}
+.intro-discription-text {
+    font-family: Montserrat;
+    color: rgb(17, 37, 100);
 }
