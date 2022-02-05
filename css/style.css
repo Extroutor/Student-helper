@@ -34,7 +34,7 @@ hr {
 .header-list {
     display: flex;
     flex-wrap: wrap;
-    width: 350px;
+    width: 250px;
     justify-content: space-between;
 }
 
@@ -54,21 +54,21 @@ hr {
 
 .intro {
     display: flex;
-    width: 80%;
+    /* width: 80%; */
     margin: 60px auto;
 }
 
 .intro-photo {
     margin: 0 auto;
     width: 50%;
-    box-shadow: 0px 0px 60px 10px #9ebeff;
+    box-shadow: 0px 0px 60px 10px #9ebeffbd;
 }
 
 .intro-text {
     display: inline;
     background: rgb(255, 255, 255);
-    padding: 0 50px
-        /* text-align: center; */
+    padding: 0 50px;
+    box-shadow: 0px 0px 60px 10px #9ebeffbd;
 }
 
 .intro-main-text {
@@ -76,13 +76,13 @@ hr {
     font-family: Montserrat;
     color: rgb(17, 37, 100);
     font-weight: bold;
-    font-size: 3.5vw;
+    font-size: 4vw;
     line-height: 4vw;
 }
 
 .intro-discription-text {
     font-family: Montserrat;
-    font-size: 1.4vw;
+    font-size: 1.7vw;
 }
 
 /* ________________________________________________  */
@@ -115,16 +115,6 @@ hr {
 
 /* ________________________________________________  */
 
-
-/* .triangle-right {
-    display: inline;
-    width: 0;
-    height: 0;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 20px solid rgb(17, 37, 100);
-} */
-
 .arrow-1 {
     /* display: none; */
     cursor: pointer;
@@ -135,6 +125,7 @@ hr {
     margin-left: 90%;
     opacity: 0;
 }
+
 .arrow-1 div {
     position: relative;
     top: 20px;
@@ -145,6 +136,7 @@ hr {
     left: 0;
     display: block;
 }
+
 .arrow-1 div::after {
     content: '';
     position: absolute;
@@ -155,6 +147,7 @@ hr {
     background-color: rgb(17, 37, 100);
     transform: rotate(45deg);
 }
+
 .arrow-1 div::before {
     content: '';
     position: absolute;
@@ -166,29 +159,33 @@ hr {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.418);
     transform: rotate(-45deg);
 }
+
 .arrow-1:hover {
     animation: arrow-1 0.5s linear infinite;
 }
 
 @keyframes arrow-1 {
     0% {
-        left:0;
+        left: 0;
     }
+
     50% {
-        left:10px;
+        left: 10px;
     }
+
     100% {
-        left:0;
+        left: 0;
     }
 }
 
-.socials{
+.socials {
     display: flex;
     justify-content: space-between;
     width: 15%;
     margin: 150px auto 30px;
     fill: #ffffff;
 }
+
 .little__text {
     padding-bottom: 40px;
     font-family: Montserrat;
@@ -196,4 +193,65 @@ hr {
     line-height: 24px;
     text-align: center;
     color: #ffffff;
+}
+
+.faq-intro {
+    margin-top: 70px;
+}
+
+.faq-intro {
+    background: #000;
+}
+
+.faq-photo {
+    box-shadow: 0px 0px 60px 10px #000000;
+    margin: 0 auto;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.faq-intro{
+
+    position: relative;
+
+}
+
+.faq-intro-text {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    /* text-transform: uppercase; */
+    color: white;
+    text-shadow: 1px 1px 2px rgb(68, 50, 50), 0 0 1em rgb(255, 255, 255); /* Параметры тени */
+    /* width: 350px; */
+    /* background: #00000094; */
+    padding: 10px;
+    /* text-align: center; */
+    font: bold 5vw Montserrat;
+}
+
+.faqs {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 100px auto 0;
+
+}
+.faq-item {
+    color:#ffffff;
+    font-family: Montserrat;
+    width: 30%;
+
+}
+.faq-question {
+    margin-bottom: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    
+}
+.faq-answer {
+    color:#f3f3f3;
+    line-height: 20px;
+
+
 }
