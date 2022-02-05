@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <script src="js/script.js"></script>
     <header>
         <div class="header-wrap">
             <h1 class="title">Студент <p class="title-p2">Форум</p>
@@ -50,12 +51,31 @@
                 <div class="intro-discription-text">
                     Выбери свой университет из списка и авторизируйся, <br>чтобы просматривать материалы
                 </div>
+                <form name="universeSelect">
+                    <select name="universe" class="select" id="selection">
+                        <option value="hide">Выбери университет</option>
+                        <option value="Itmo">ИТМО</option>
+                        <option value="Spbgu">СПБГУ</option>
+                        <option value="Spbpu">СПБПУ</option>
+                        <option value="2013">СБПГЭУ</option>
+                        <option value="2014">СПБГУП</option>
+                    </select>
+                </form>
+                <a href="https://google.ru">
+                    <div class="arrow-1" id="arrow">
+                        <div></div>
+                    </div>
+                </a>
             </div>
         </div>
-
     </main>
     <footer>
-
+        <div class="socials">
+            <img src="img/telegram.svg" alt="LinkedIn">
+            <img src="img/inst1.svg" alt="Instagram">
+            <img src="img/vk.svg" alt="Behance">
+        </div>
+        <p class="little__text">Подписывайтесь на нас в Телеграм, Инстаграм, VK</p>
     </footer>
 </body>
 
