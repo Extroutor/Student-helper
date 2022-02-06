@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Главная | Студент Форум</title>
+    <title>Войти | Студент Форум</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
 
@@ -35,29 +35,21 @@
     </header>
     <main>
         <div class="intro">
-            <img class="intro-photo" src=" img/main2.jpg">
-            <div class="intro-text">
-                <div class="intro-main-text">
-                    Выбери свой университет
+            <div class="intro-text auth-text">
+                <div class="intro-main-text auth-main-text">
+                    Войди в свой аккаунт
                 </div>
-                <div class="intro-discription-text">
-                    Выбери свой университет из списка и авторизируйся, <br>чтобы просматривать материалы
-                </div>
-                <form name="universeSelect">
-                    <select name="universe" class="select" id="selection">
-                        <option value="hide">Выбери университет</option>
-                        <option value="Itmo">ИТМО</option>
-                        <option value="Spbgu">СПБГУ</option>
-                        <option value="Spbpu">СПБПУ</option>
-                        <option value="2013">СБПГЭУ</option>
-                        <option value="2014">СПБГУП</option>
-                    </select>
+                <form class="auth-form" action="" method="">
+                    <input type="text" placeholder="Введите логин">
+                    <input type="password" placeholder="Введите пароль">
+                    <button class="auth-button">Зарегистрироваться</button>
+                    <p class="non-account">
+                        У вас нет аккаунта? - <a class="auth-a" href="register.html">зарегистрируйся!
+                        
+                        </a>
+                    </p>
+
                 </form>
-                <a href="auth.html">
-                    <div class="arrow-1" id="arrow">
-                        <div></div>
-                    </div>
-                </a>
             </div>
         </div>
     </main>
