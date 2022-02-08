@@ -39,17 +39,15 @@
                 <div class="intro-main-text auth-main-text">
                     Зарегистрируй новый аккаунт
                 </div>
-                <form class="auth-form" action="" method="">
-                    <input type="text" placeholder="Введите логин">
-                    <input type="password" placeholder="Введите пароль">
-                    <input type="password" placeholder="Подтвердите пароль">
-                    <button class="auth-button">Зарегистрироваться</button>
+                <form class="auth-form" action="check.php" method="post">
+                    <input type="text" placeholder="Введите логин" name="login" id="login">
+                    <input type="password" placeholder="Введите пароль" name="pass" id="pass">
+                    <!-- <input type="password" placeholder="Подтвердите пароль" name="password" id="password"> -->
+                    <button class="auth-button" type="submit">Зарегистрироваться</button>
                     <p class="non-account">
-                        У тебя есть аккаунта? - <a class="auth-a" href="auth.html">войди!
-                        
+                        У тебя есть аккаунт? - <a class="auth-a" href="auth.html">войди!
                         </a>
                     </p>
-
                 </form>
             </div>
         </div>
@@ -63,5 +61,4 @@
         <p class="little__text">Подписывайтесь на нас в Телеграм, Инстаграм, VK</p>
     </footer>
 </body>
-
 </html>
