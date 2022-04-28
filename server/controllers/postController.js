@@ -1,41 +1,40 @@
 const uuid = require('uuid')
-const {Forum,Post} = require('../models/models')
+const path = require('path')
+const {Forum, Post} = require('../models/models')
 const ApiError = require('../error/ApiError')
 
-class PostController {
+class ForumController {
     async create(req, res, next) {
         try {
-            let {title, description, courseId, facultyId} = req.body
-            const post = await Forum.create({title, description, courseId, facultyId})
+            let {name, description, forumId} = req.body
+            const post = await Post.create({name, description, forumId})
             return res.json(post)
         } catch (e) {
             next(ApiError.badRequest(e.message))
         }
 
     }
-    // async getAll(req, res) {
-    //     let {courseId, facultyId, limit, page} = req.query
-    //     page = page || 1
-    //     limit = limit || 9
-    //     let offset = page * limit - limit
-    //     let forum;
-    //     if (!courseId && !facultyId) {
-    //         forum = await Forum.findAndCountAll({limit, offset})
-    //     }
-    //     if (courseId && !facultyId) {
-    //         forum = await Forum.findAndCountAll({where:{courseId}, limit, offset})
-    //
-    //     }
-    //     if (!courseId && facultyId) {
-    //         forum = await Forum.findAndCountAll({where:{facultyId}, limit, offset})
-    //
-    //     }
-    //     if (courseId && facultyId) {
-    //         forum = await Forum.findAndCountAll({where:{courseId, facultyId}, limit, offset})
-    //     }
-    //     return res.json(forum)
-    // }
-
+    async getAll(req, res) {
+        let {} = req.query
+        // page = page || 1
+        // limit = limit || 9
+        // let offset = page * limit - limit
+        let posts;
+        // if (!courseId && !facultyId) {
+        //     posts = await Forum.findAndCountAll({limit, offset})
+        // }
+        posts = await Post.findAndCountAll()
+        return res.json(posts)
+    }
+    async getOne(req, res) {
+        const {id} = req.params
+        const post = await Post.findOne(
+            {
+                where: {id},
+            },
+        )
+        return res.json(post)
+    }
 }
 
-module.exports = new PostController()
+module.exports = new ForumController()

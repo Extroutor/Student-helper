@@ -1,7 +1,7 @@
 const sequelize = require('../db')
 const {DataTypes} = require('sequelize')
 
-const User = sequelize.define('user', {
+const User = sequelize.define('users', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     email: {type: DataTypes.STRING, unique: true,},
     password: {type: DataTypes.STRING},
@@ -10,9 +10,17 @@ const User = sequelize.define('user', {
     surname: {type: DataTypes.STRING, unique: false,},
 })
 
+const Post = sequelize.define('post', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    name: {type: DataTypes.STRING, unique: true, allowNull: false},
+    description: {type: DataTypes.INTEGER, allowNull: false},
+    rating: {type: DataTypes.INTEGER, defaultValue: 0},
+})
+
 const Forum = sequelize.define('forum', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    title: {type: DataTypes.STRING, unique: true, allowNull: false},
+    name: {type: DataTypes.STRING, unique: true, allowNull: false},
+    description: {type: DataTypes.INTEGER, allowNull: false},
     rating: {type: DataTypes.INTEGER, defaultValue: 0},
 })
 
@@ -29,13 +37,6 @@ const Course = sequelize.define('course', {
 const Rating = sequelize.define('rating', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     rate: {type: DataTypes.INTEGER, allowNull: false},
-})
-
-const Post = sequelize.define('post', {
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    title: {type: DataTypes.STRING, allowNull: false},
-    description: {type: DataTypes.STRING, allowNull: false},
-    rating: {type: DataTypes.INTEGER, defaultValue: 0},
 })
 
 const FacultyCourse = sequelize.define('faculty_course', {
@@ -63,8 +64,8 @@ Course.belongsToMany(Faculty, {through: FacultyCourse })
 module.exports = {
     User,
     Forum,
-    Post,
     Faculty,
     Course,
-    Rating
+    Rating,
+    Post
 }

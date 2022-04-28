@@ -1,13 +1,14 @@
 const uuid = require('uuid')
-const {Forum,Post} = require('../models/models')
+const path = require('path')
+const {Forum, Post} = require('../models/models')
 const ApiError = require('../error/ApiError')
 
 class ForumController {
     async create(req, res, next) {
         try {
-            let {title, description, courseId, facultyId} = req.body
-            const post = await Forum.create({title, description, courseId, facultyId})
-            return res.json(post)
+            let {name, description, facultyId, courseId} = req.body
+            const forum = await Forum.create({name, description, facultyId, courseId})
+            return res.json(forum)
         } catch (e) {
             next(ApiError.badRequest(e.message))
         }
@@ -18,32 +19,32 @@ class ForumController {
         page = page || 1
         limit = limit || 9
         let offset = page * limit - limit
-        let forum;
+        let forums;
         if (!courseId && !facultyId) {
-            forum = await Forum.findAndCountAll({limit, offset})
+            forums = await Forum.findAndCountAll({limit, offset})
         }
         if (courseId && !facultyId) {
-            forum = await Forum.findAndCountAll({where:{courseId}, limit, offset})
+            forums = await Forum.findAndCountAll({where:{courseId}, limit, offset})
 
         }
         if (!courseId && facultyId) {
-            forum = await Forum.findAndCountAll({where:{facultyId}, limit, offset})
+            forums = await Forum.findAndCountAll({where:{facultyId}, limit, offset})
 
         }
         if (courseId && facultyId) {
-            forum = await Forum.findAndCountAll({where:{courseId, facultyId}, limit, offset})
+            forums = await Forum.findAndCountAll({where:{facultyId, courseId}, limit, offset})
         }
-        return res.json(forum)
+        return res.json(forums)
     }
     async getOne(req, res) {
         const {id} = req.params
-        const forum = await Forum.findOne(
+        const forums = await Forum.findOne(
             {
                 where: {id},
-                include: [{model: Post, as: 'info'}]
+                include: [{model: Post, as: 'post'}]
             },
         )
-        return res.json(forum)
+        return res.json(forums)
     }
 }
 

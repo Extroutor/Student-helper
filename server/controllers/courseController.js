@@ -7,12 +7,10 @@ class CourseController {
         const course = await Course.create({name})
         return res.json(course)
     }
-
     async getAll(req, res) {
-        const courses = await Course.findAll()
-        return res.json(courses)
+        const course = await Course.findAll()
+        return res.json(course)
     }
-
 }
 
 module.exports = new CourseController()
